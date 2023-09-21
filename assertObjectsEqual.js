@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !==  ${expected}`);
-  }
-};
-
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
@@ -22,7 +14,7 @@ const eqArrays = (arr1, arr2) => {
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   let objKeys1 = Object.keys(object1); // Array of keys
   let objKeys2 = Object.keys(object2);
 
@@ -46,7 +38,7 @@ const eqObjects = function(object1, object2) {
 };
 
 // FUNCTION IMPLEMENTATION
-const assertObjectsEqual = function(actual, expected) {
+const assertObjectsEqual = function (actual, expected) {
   const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
@@ -70,3 +62,7 @@ assertObjectsEqual(multiColorShirtObject, anotherMultiColorShirtObject); // => t
 
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertObjectsEqual(multiColorShirtObject, longSleeveMultiColorShirtObject); // => false
+
+const cardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
+const secondCardSet = { spades: 5, clubs: [5, 1], aces: 13, hearts: 2 };
+assertObjectsEqual(cardSet, secondCardSet); // => false
