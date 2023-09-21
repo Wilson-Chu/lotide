@@ -70,7 +70,8 @@ const secondCardSet = { spades: 5, clubs: [5, 1], aces: 13, hearts: 2 };
 result = eqObjects(cardSet, secondCardSet); // => false
 assertEqual(result, false);
 
+// (order of keys in objects do not matter, but order of elements in arrays DO matter)
 const thirdCardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
 const fourthCardSet = { spades: [5, 13], clubs: [5, 1], aces: 13, hearts: 1 };
-result = eqObjects(thirdCardSet, fourthCardSet); // => true? (does array order matter?)
-assertEqual(result, true);
+result = eqObjects(thirdCardSet, fourthCardSet); // => false
+assertEqual(result, false);

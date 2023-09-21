@@ -66,3 +66,7 @@ assertObjectsEqual(multiColorShirtObject, longSleeveMultiColorShirtObject); // =
 const cardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
 const secondCardSet = { spades: 5, clubs: [5, 1], aces: 13, hearts: 2 };
 assertObjectsEqual(cardSet, secondCardSet); // => false
+
+const thirdCardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
+const fourthCardSet = { spades: [13, 5], clubs: [1, 5], aces: 13, hearts: 1 };
+assertObjectsEqual(thirdCardSet, fourthCardSet); // => true
