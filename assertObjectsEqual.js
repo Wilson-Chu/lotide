@@ -14,22 +14,22 @@ const eqArrays = (arr1, arr2) => {
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function (object1, object2) {
-  let objKeys1 = Object.keys(object1); // Array of keys
-  let objKeys2 = Object.keys(object2);
+const eqObjects = function(object1, object2) {
+  let arrKeys1 = Object.keys(object1); // Array of keys
+  let arrKeys2 = Object.keys(object2);
 
   // Check for same number of keys
-  if (objKeys1.length !== objKeys2.length) {
+  if (arrKeys1.length !== arrKeys2.length) {
     return false;
   }
 
-  for (let objKey1 of objKeys1) {
+  for (let arrKey1 of arrKeys1) {
     // Check for arrays at each key, and compare arrays if they exist
-    if (Array.isArray(object1[objKey1]) && Array.isArray(object2[objKey1])) {
-      return eqArrays(object1[objKey1], object2[objKey1]);
+    if (Array.isArray(object1[arrKey1]) && Array.isArray(object2[arrKey1])) {
+      return eqArrays(object1[arrKey1], object2[arrKey1]);
     }
     // Check for same primative values at each key
-    else if (object1[objKey1] !== object2[objKey1]) {
+    else if (object1[arrKey1] !== object2[arrKey1]) {
       return false;
     }
   }
@@ -38,7 +38,7 @@ const eqObjects = function (object1, object2) {
 };
 
 // FUNCTION IMPLEMENTATION
-const assertObjectsEqual = function (actual, expected) {
+const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
