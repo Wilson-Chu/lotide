@@ -34,8 +34,8 @@ const eqObjects = function (object1, object2) {
 
   for (let objKey1 of objKeys1) {
     // Check for arrays at each key, and compare arrays if they exist
-    if (Array.isArray(objKeys1[objKey1]) && Array.isArray(objKeys2[objKey1])) {
-      return eqArrays(objKeys1[objKey1], objKeys2[objKey1]);
+    if (Array.isArray(object1[objKey1]) && Array.isArray(object2[objKey1])) {
+      return eqArrays(object1[objKey1], object2[objKey1]);
     }
     // Check for same values at each key
     else if (objKeys1[objKey1] !== objKeys2[objKey1]) {
@@ -69,3 +69,8 @@ const cardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
 const secondCardSet = { spades: 5, clubs: [5, 1], aces: 13, hearts: 2 };
 result = eqObjects(cardSet, secondCardSet); // => false
 assertEqual(result, false);
+
+const thirdCardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
+const fourthCardSet = { spades: [5, 13], clubs: [5, 1], aces: 13, hearts: 1 };
+result = eqObjects(thirdCardSet, fourthCardSet); // => true? (does array order matter?)
+assertEqual(result, true);
