@@ -32,7 +32,7 @@ const countLetters = function (sentence) {
 let string = 'Lighthouse Labs Is So Cool';
 console.log(countLetters(string));
 
-// Will evaluate to FALSE => objects cannot properly be compared using '==='
+/* Will evaluate to FALSE => objects cannot properly be compared using '===' */
 // assertEqual(countLetters("lighthouse in the house"), {
 //   l: 1,
 //   i: 2,
