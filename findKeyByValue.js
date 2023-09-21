@@ -7,7 +7,7 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const findKeyByValue(obj, value){
+const findKeyByValue = function (obj, value) {
 
 };
 
