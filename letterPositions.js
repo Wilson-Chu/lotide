@@ -21,7 +21,7 @@ const assertArraysEqual = (arr1, arr2) => {
   }
 };
 
-const letterPositions = function (sentence) {
+const letterPositions = function(sentence) {
   const results = {};
 
   // logic to update results here
@@ -30,8 +30,7 @@ const letterPositions = function (sentence) {
   for (let i = 0; i < stringLowerCase.length; i++) {
     if (results[stringLowerCase[i]]) {
       results[stringLowerCase[i]].push(i);
-    }
-    else {
+    } else {
       results[stringLowerCase[i]] = [i];
     }
   }
