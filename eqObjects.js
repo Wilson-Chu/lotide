@@ -1,5 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -23,7 +23,7 @@ const eqArrays = (arr1, arr2) => {
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   let objKeys1 = Object.keys(object1); // Array of keys
   let objKeys2 = Object.keys(object2);
 
@@ -63,4 +63,9 @@ assertEqual(result, true);
 
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 result = eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject); // => false
+assertEqual(result, false);
+
+const cardSet = { aces: 13, spades: [13, 5], hearts: 1, clubs: [1, 5] };
+const secondCardSet = { spades: 5, clubs: [5, 1], aces: 13, hearts: 2 };
+result = eqObjects(cardSet, secondCardSet); // => false
 assertEqual(result, false);
