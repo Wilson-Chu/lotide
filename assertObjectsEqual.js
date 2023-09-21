@@ -25,11 +25,11 @@ const eqObjects = function (object1, object2) {
 
   for (let objKey1 of objKeys1) {
     // Check for arrays at each key, and compare arrays if they exist
-    if (Array.isArray(objKeys1[objKey1]) && Array.isArray(objKeys2[objKey1])) {
-      return eqArrays(objKeys1[objKey1], objKeys2[objKey1]);
+    if (Array.isArray(object1[objKey1]) && Array.isArray(object2[objKey1])) {
+      return eqArrays(object1[objKey1], object2[objKey1]);
     }
-    // Check for same values at each key
-    else if (objKeys1[objKey1] !== objKeys2[objKey1]) {
+    // Check for same primative values at each key
+    else if (object1[objKey1] !== object2[objKey1]) {
       return false;
     }
   }
