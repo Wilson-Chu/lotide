@@ -23,14 +23,23 @@ const assertArraysEqual = (arr1, arr2) => {
 
 const letterPositions = function (sentence) {
   const results = {};
+
   // logic to update results here
+  const stringLowerCase = sentence.toLowerCase();
+
+  for (let i = 0; i < stringLowerCase.length; i++) {
+    if (results[stringLowerCase[i]]) {
+      results[stringLowerCase[i]].push(i);
+    }
+    else {
+      results[stringLowerCase[i]] = [i];
+    }
+  }
+
   return results;
 };
 
 // TEST CODE
-assertArraysEqual(letterPositions("hello"), {
-  h: [0],
-  e: [1],
-  l: [2, 3],
-  o: [4]
-});  // => should PASS
+assertArraysEqual(letterPositions("hello").e, [1]);  // => should PASS
+assertArraysEqual(letterPositions("HELLO").l, [2, 3]);  // => should PASS
+assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);  // => should PASS
