@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@wilsonchu/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was created and published by me as part of my learnings at Lighthouse Labs. A mini clone of Lodash.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Wilson-Chu/lotide.git"
   },
-  "author": "",
+  "author": "Wilson Chu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Wilson-Chu/lotide/issues"
